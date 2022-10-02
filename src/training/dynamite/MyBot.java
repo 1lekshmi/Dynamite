@@ -36,7 +36,7 @@ public class MyBot implements Bot {
             } else if (P2 == Move.W) {
                 P1 = getRandomMove();
             }
-        } else if (gamestate.getRounds().size() > 1){
+        } else if (gamestate.getRounds().size() > 1 && gamestate.getRounds().size() <= 100){
             Round lastRound = gamestate.getRounds().get(gamestate.getRounds().size() - 1);
             Move P2 = lastRound.getP2();
             if(P2 == Move.D) {
