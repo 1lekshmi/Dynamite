@@ -15,7 +15,8 @@ public class MyBot implements Bot {
     public Move makeMove(Gamestate gamestate) {
         // Are you debugging?
         // Put a breakpoint in this method to see when we make a move
-        return gamestate.getRounds().size() < 100 ? Move.D : getWinnableMove(gamestate);
+//        gamestate.getRounds().size() < 100 ? Move.D : getWinnableMove(gamestate)
+        return getWinnableMove(gamestate);
     }
 
     public Move getWinnableMove(Gamestate gamestate){
@@ -35,14 +36,17 @@ public class MyBot implements Bot {
             } else if (P2 == Move.W) {
                 P1 = getRandomMove();
             }
+        } else if (gamestate.getRounds().size() > 1){
+            Round lastRound = gamestate.getRounds().get(gamestate.getRounds().size() - 1);
+            Move P2 = lastRound.getP2();
+            if(P2 == Move.D) {
+                P1 = Move.D;
+            } else {
+                P1 = getAllMove();
+            }
         }
         return P1;
     }
-
-//    public Move getDynamiteMoves(Gamestate gamestate){
-//        Move P1 = getAllMove();
-//        if (gamestate.)
-//    }
 
     public Move getRandomMove() {
         int randomNumberBetween0And3 = (int)Math.floor(Math.random() * 3.0);
@@ -54,7 +58,6 @@ public class MyBot implements Bot {
         int randomNumberBetween0And3 = (int)Math.floor(Math.random() * 3.0);
         Move[] possibleMoves = new Move[]{Move.R, Move.P, Move.S, Move.D};
         return possibleMoves[randomNumberBetween0And3];
-
     }
 
 }
