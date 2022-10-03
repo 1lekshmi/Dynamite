@@ -25,25 +25,35 @@ public class MyBot implements Bot {
             Round lastRound = gamestate.getRounds().get(gamestate.getRounds().size() - 1);
             Move P2 = lastRound.getP2();
             Move P1_2 = lastRound.getP1();
-            if (P1_2 == Move.P || P2 == Move.S){
+            if (P1_2 == Move.P && P2 == Move.S){
                 P1 = Move.R;
-            } else if (P1_2 == Move.S || P2 == Move.R) {
+            } else if (P1_2 == Move.S && P2 == Move.R) {
                 P1 = Move.P;
-            } else if (P1_2 == Move.R || P2 == Move.P) {
+            } else if (P1_2 == Move.R && P2 == Move.P) {
                 P1 = Move.S;
-            } else if(P1_2 == Move.D || P2 == Move.D){
+            } else if(P1_2 == Move.D && P2 == Move.D){
                 P1 = Move.W;
-            } else if (P1_2 == Move.W || P2 == Move.W) {
+            } else if (P1_2 == Move.W && P2 == Move.W) {
                 P1 = getRandomMove();
             }
         } else if (gamestate.getRounds().size() > 1 && gamestate.getRounds().size() <= 100){
             Round lastRound = gamestate.getRounds().get(gamestate.getRounds().size() - 1);
             Move P2 = lastRound.getP2();
             Move P1_2 = lastRound.getP2();
-            if(P1_2 == Move.D || P2 == Move.D) {
+            if(P1_2 == Move.D && P2 == Move.D) {
                 P1 = Move.W;
             } else {
-                P1 = getAllMove();
+                if (P1_2 == Move.P && P2 == Move.S){
+                    P1 = Move.R;
+                } else if (P1_2 == Move.S && P2 == Move.R) {
+                    P1 = Move.P;
+                } else if (P1_2 == Move.R && P2 == Move.P) {
+                    P1 = Move.S;
+                } else if(P1_2 == Move.D && P2 == Move.D){
+                    P1 = Move.W;
+                } else if (P1_2 == Move.W && P2 == Move.W) {
+                    P1 = Move.D;
+                }
             }
         }
         return P1;

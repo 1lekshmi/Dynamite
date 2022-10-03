@@ -7,7 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="855644b9-333f-4662-8592-9ec97859d241" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/training/dynamite/MyBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/training/dynamite/MyBot.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -188,7 +187,7 @@
       <workItem from="1548267253231" duration="7209000" />
       <workItem from="1664529171183" duration="14754000" />
       <workItem from="1664548163512" duration="3660000" />
-      <workItem from="1664732263219" duration="4030000" />
+      <workItem from="1664732263219" duration="4331000" />
     </task>
     <servers />
   </component>
